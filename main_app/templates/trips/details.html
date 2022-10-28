@@ -7,14 +7,14 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ trip.name }}</span>
+        <span class="card-title">{{ trip.trip_name }}</span>
         <p>Locations: {{ trip.locations }}</p>
         <p>Start Date: {{ trip.start_date }}</p>
         <p>End Date: {{ trip.end_date }}</p>
       </div>
       <div class="card-action">
-        <a href="">Edit</a>
-        <a href="">Delete</a>
+        <a href="{% url 'trips_update' trip.id %}">Edit</a>
+        <a href="{% url 'trips_delete' trip.id %}">Delete</a>
       </div>
     </div>
 </div>
