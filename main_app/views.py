@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Trip
@@ -24,6 +24,14 @@ class TripCreate(CreateView):
     model = Trip
     fields = "__all__" 
 
+class TripUpdate(UpdateView):
+  model = Trip
+  #disallow changing location? otherwise delete and start new trip
+  fields = ["name", "start_date", "end_date"]
+
+class TripDelete(DeleteView):
+  model = Trip
+  success_url = "/trips/"
 
 def signup(request):
   error_message = ''
