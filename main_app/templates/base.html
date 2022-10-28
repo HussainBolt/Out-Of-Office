@@ -19,7 +19,12 @@
         </ul>
         <ul class="right">
           <li><a href="/about">About</a></li>
-          {% if user.is_authenticated %}
+
+          <!-- to be viewed only after user has been authenticated. Have it out now for testing -->
+          <li><a href="{% url 'trips_create' %}">Add a Trip</a></li>
+          <li><a href="{% url 'index' %}">View All Trips</a></li>
+          <!--                                                                  -->
+          {% if user.is_authenticated %}  
             <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
