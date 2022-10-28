@@ -17,13 +17,20 @@
     <input type="submit" value="Submit!" class="btn">
   </form>
 
-<script>
-  const dateEl = document.getElementById('id_date');
-  M.Datepicker.init(dateEl, {
-    format: 'yyyy-mm-dd',
-    defaultDate: new Date(),
-    setDefaultDate: true,
-    autoClose: true
-  });
-</script>
+  <script>
+    const startDateEl = document.getElementById('id_start_date');
+    const endDateEl = document.getElementById('id_end_date');
+    M.Datepicker.init(startDateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+    M.Datepicker.init(endDateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+  </script>
 {% endblock %}
