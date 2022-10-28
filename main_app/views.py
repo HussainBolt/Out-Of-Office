@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
 from .models import Trip
 
 # Create your views here.
@@ -14,7 +13,8 @@ def about(request):
   return render(request, 'about.html')
 
 def trips_index(request):
-  return render(request, "trips/index.html")
+    trips = Trip.objects.all()
+    return render(request, "trips/index.html", { 'trips': trips })
 
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
