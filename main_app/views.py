@@ -27,7 +27,7 @@ class TripCreate(CreateView):
 class TripUpdate(UpdateView):
   model = Trip
   #disallow changing location? otherwise delete and start new trip
-  fields = ["name", "start_date", "end_date"]
+  fields = ["trip_name", "start_date", "end_date"]
 
 class TripDelete(DeleteView):
   model = Trip
