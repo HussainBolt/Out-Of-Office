@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Trip
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -29,3 +30,7 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def trips_index(request):
+  trips = Trip.objects.all()
+  return render(request, 'trips/index.html', { 'trips': trips })
