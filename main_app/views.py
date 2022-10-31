@@ -21,7 +21,8 @@ def trips_index(request):
 
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
-  return render(request, "trips/details.html", {"trip": trip})
+  itinerary_form = ItineraryForm()
+  return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
 
 class TripCreate(CreateView):
     model = Trip
@@ -92,7 +93,7 @@ def add_activity(request, itinerary_id):
         new_activity = form.save(commit=False)
         new_activity.itinerary_id = itinerary_id
         new_activity.save()
-    return redirect("activities_index", itinerary_id=itinerary_id)
+    return redirect("itineraries_detail", itinerary_id=itinerary_id)
 
 def signup(request):
   error_message = ''
