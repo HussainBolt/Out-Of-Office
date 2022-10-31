@@ -11,6 +11,7 @@ main {
 
 .nav-wrapper {
   background-color: rgb(88, 206, 206);
+  box-shadow: 0px 5px 5px 5px salmon;
 }
 
 nav ul a {
@@ -35,13 +36,33 @@ nav ul a {
   font-family: 'Niconne', cursive;
   font-weight: 10000;
   text-shadow:2px 2px 0px rgb(61, 133, 133), 
-                3px 3px 0px rgb(32, 75, 75), 
-                4px 4px 0px black,
-                6px 6px 0px salmon;
+              3px 3px 0px rgb(32, 75, 75), 
+              4px 4px 0px black,
+              6px 6px 0px salmon;
+}
+
+.card {
+  margin: 30px;
+}
+
+.card-content {
+  background-color: rgba(0, 255, 255, 0.196);
+  color: salmon;
+  text-shadow: 0.5px 0.5px 0px rgb(32, 76, 76);
+  box-shadow: 7px 7px 7px 5px rgba(250, 128, 114, 0.5);
+}
+
+.card-content:hover {
+  background-color: rgba(250, 128, 114, 0.344);
+  color: rgb(88, 206, 206);
+  text-shadow: 0.5px 0.5px 0px rgb(118, 60, 53);
+  box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.5);
+  transition: .5s ease-out;
 }
 
 footer.page-footer {
     padding-top: 0;
     text-align: right;
+    box-shadow: 3px -5px 10px aqua;
   }
   

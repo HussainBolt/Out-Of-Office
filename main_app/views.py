@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Trip, Itinerary, Activity
+from .forms import ItineraryForm, ActivityForm
 
 # Create your views here.
 # Define the home view
@@ -20,7 +21,8 @@ def trips_index(request):
 
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
-  return render(request, "trips/details.html", {"trip": trip})
+  itinerary_form = ItineraryForm()
+  return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
 
 class TripCreate(CreateView):
     model = Trip
@@ -43,15 +45,55 @@ class ItineraryDetail(DetailView):
 
 class ItineraryCreate(CreateView):
   model = Itinerary
-  fields = ''
+  fields = "__all__"
 
 class ItineraryUpdate(UpdateView):
   model = Itinerary
-  fields = ['']
+  fields = "__all__"
 
 class ItineraryDelete(DeleteView):
   model = Itinerary
   success_url = '/itineraries/'
+
+class ActivityList(ListView):
+  model = Activity
+
+class ActivityDetail(DetailView):
+  model = Activity
+
+class ActivityCreate(CreateView):
+  model = Activity
+  fields = "__all__"
+
+class ActivityUpdate(UpdateView):
+  model = Activity
+  fields = "__all__"
+
+class ActivityDelete(DeleteView):
+  model = Itinerary
+  success_url = '/activities/'
+
+def add_itinerary(request, trip_id):
+    #creating an itinerary form instance with a post request
+    #passing data from our detail form 
+    form = ItineraryForm(request.POST)
+    if form.is_valid():
+        #form.save will return a new instance of the itinerary
+        #commit=False prevents it from being saved in the database, it remains in memory
+        new_itinerary = form.save(commit=False)
+        new_itinerary.trip_id = trip_id
+        new_itinerary.save()
+    return redirect("detail", trip_id=trip_id)
+
+def add_activity(request, itinerary_id):
+    #creating an itinerary form instance with a post request
+    #passing data from our detail form 
+    form = ActivityForm(request.POST)
+    if form.is_valid():
+        new_activity = form.save(commit=False)
+        new_activity.itinerary_id = itinerary_id
+        new_activity.save()
+    return redirect("itineraries_detail", itinerary_id=itinerary_id)
 
 def signup(request):
   error_message = ''
