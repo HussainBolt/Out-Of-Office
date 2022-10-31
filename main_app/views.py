@@ -34,6 +34,28 @@ class TripDelete(DeleteView):
   model = Trip
   success_url = "/trips/"
 
+def assoc_itin(request, trip_id, itin_id):
+  Trip.objects.get(id=trip_id).itins.add(itin_id)
+  return redirect('detail', trip_id=trip_id)
+
+class ItinList(ListView):
+  model = Itinerary
+
+class ItinDetail(DetailView):
+  model = Itinerary
+
+class ItinCreate(CreateView):
+  model = Itinerary
+  fields = ''
+
+class ItinUpdate(UpdateView):
+  model = Itinerary
+  fields = ['']
+
+class ItinDelete(DeleteView):
+  model = Itinerary
+  success_url = '/itineraries/'
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
