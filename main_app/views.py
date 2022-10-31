@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Trip, Itinerary, Activity
@@ -34,25 +35,21 @@ class TripDelete(DeleteView):
   model = Trip
   success_url = "/trips/"
 
-def assoc_itin(request, trip_id, itin_id):
-  Trip.objects.get(id=trip_id).itins.add(itin_id)
-  return redirect('detail', trip_id=trip_id)
-
-class ItinList(ListView):
+class ItineraryList(ListView):
   model = Itinerary
 
-class ItinDetail(DetailView):
+class ItineraryDetail(DetailView):
   model = Itinerary
 
-class ItinCreate(CreateView):
+class ItineraryCreate(CreateView):
   model = Itinerary
   fields = ''
 
-class ItinUpdate(UpdateView):
+class ItineraryUpdate(UpdateView):
   model = Itinerary
   fields = ['']
 
-class ItinDelete(DeleteView):
+class ItineraryDelete(DeleteView):
   model = Itinerary
   success_url = '/itineraries/'
 
