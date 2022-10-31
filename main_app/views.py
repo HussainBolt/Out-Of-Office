@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Trip, Itinerary, Activity
+from .forms import ItineraryForm
 
 # Create your views here.
 # Define the home view
@@ -52,6 +53,19 @@ class ItineraryUpdate(UpdateView):
 class ItineraryDelete(DeleteView):
   model = Itinerary
   success_url = '/itineraries/'
+
+def add_itinerary(request, trip_id):
+    #creating an itinerary form instance with a post request
+    #passing data from our detail form 
+    form = ItineraryForm(request.POST)
+    if form.is_valid():
+        #form.save will return a new instance of the itinerary
+        #commit=False prevents it from being saved in the database, it remains in memory
+        new_itinerary = form.save(commit=False)
+        new_itinerary.trip_id = trip_id
+        new_itinerary.save()
+    return redirect("detail", trip_id=trip_id)
+
 
 def signup(request):
   error_message = ''
