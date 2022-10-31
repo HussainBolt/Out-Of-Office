@@ -31,7 +31,7 @@
         <tbody>
           {% for itinerary in trip.itinerary_set.all %}
             <tr>
-              <td>{{itinerary.date}}</td>
+              <td><a href="{% url 'itineraries_detail' itinerary.id %}">{{itinerary.date}}</a></td>
               <td>{{itinerary.notes}}</td>
             </tr>
           {% endfor %}
