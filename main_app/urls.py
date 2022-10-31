@@ -24,8 +24,12 @@ urlpatterns = [
     path("itineraries/<int:pk>/update/", views.ItineraryUpdate.as_view(), name="itineraries_update"),
     path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"),
 
-    #URL FOR time slots
+    #URL FOR Activity
     #NOTe :comment it out so it does not affect your code
+
+    #Path for adding an itinerary to particular trip
+    path("itineraries/<int:itinerary_id>/add_activity/", views.add_activity, name="add_activity"),
+
     path("activities/", views.ActivityList.as_view(), name="activities_index"),
     path("activities/<int:pk>/", views.ActivityDetail.as_view(), name="activities_detail"), 
     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
