@@ -20,10 +20,10 @@ urlpatterns = [
 
     #URL FOR time slots
     #NOTe :comment it out so it does not affect your code
-    path("activities/", views.ActivityList.as_view(), name="activities_index"),
-    path("activities/<int:pk>/", views.ActivityDetail.as_view(), name="activities_detail"), 
-    path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
-    path("activities/<int:pk>/update/", views.ActivityUpdate.as_view(), name="activities_update"),
-    path("activities/<int:pk>/delete/", views.ActivityDelete.as_view(), name="activities_delete"),
+#     path("activities/", views.ActivityList.as_view(), name="activities_index"),
+#     path("activities/<int:pk>/", views.ActivityDetail.as_view(), name="activities_detail"), 
+#     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
+#     path("activities/<int:pk>/update/", views.ActivityUpdate.as_view(), name="activities_update"),
+#     path("activities/<int:pk>/delete/", views.ActivityDelete.as_view(), name="activities_delete"),
 
 ]
