@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Trip
+from .models import Trip, Itinerary, Activity
 
 # Create your views here.
 # Define the home view
