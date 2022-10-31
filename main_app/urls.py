@@ -18,7 +18,7 @@ urlpatterns = [
     path("trips/<int:trip_id>/add_itinerary/", views.add_itinerary, name="add_itinerary"),
 
     # Path for itinerary after it has been added to trips
-    path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"),
+    path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), #Implementation TBD
     path("itineraries/<int:pk>/", views.ItineraryDetail.as_view(), name="itineraries_detail"), 
     path("itineraries/create/", views.ItineraryCreate.as_view(), name="itineraries_create"),
     path("itineraries/<int:pk>/update/", views.ItineraryUpdate.as_view(), name="itineraries_update"),
