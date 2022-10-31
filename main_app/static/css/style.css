@@ -28,6 +28,11 @@ nav ul a {
   color: rgb(48, 121, 121);
 }
 
+.left.brand-logo:hover {
+  background-color: salmon;
+  color: rgb(48, 121, 121);
+}
+
 .title {
   display: grid;
   text-align: center;
@@ -48,16 +53,26 @@ nav ul a {
 .card-content {
   background-color: rgba(0, 255, 255, 0.196);
   color: salmon;
-  text-shadow: 0.5px 0.5px 0px rgb(32, 76, 76);
+  text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 5px rgba(250, 128, 114, 0.5);
+  background-image: url("https://i.imgur.com/m8e3h47.png?1");
 }
 
 .card-content:hover {
   background-color: rgba(250, 128, 114, 0.344);
-  color: rgb(88, 206, 206);
-  text-shadow: 0.5px 0.5px 0px rgb(118, 60, 53);
+  color: rgb(94, 255, 255);
+  text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.5);
-  transition: .5s ease-out;
+  transition: .3s ease-out;
+}
+
+.card-action {
+  background-color: salmon;
+}
+
+.edit,
+.delete {
+  color: aqua;
 }
 
 footer.page-footer {
