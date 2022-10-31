@@ -44,15 +44,33 @@ class ItineraryDetail(DetailView):
 
 class ItineraryCreate(CreateView):
   model = Itinerary
-  fields = ''
+  fields = "__all__"
 
 class ItineraryUpdate(UpdateView):
   model = Itinerary
-  fields = ['']
+  fields = "__all__"
 
 class ItineraryDelete(DeleteView):
   model = Itinerary
   success_url = '/itineraries/'
+
+class ActivityList(ListView):
+  model = Activity
+
+class ActivityDetail(DetailView):
+  model = Activity
+
+class ActivityCreate(CreateView):
+  model = Activity
+  fields = "__all__"
+
+class ActivityUpdate(UpdateView):
+  model = Activity
+  fields = "__all__"
+
+class ActivityDelete(DeleteView):
+  model = Itinerary
+  success_url = '/activities/'
 
 def add_itinerary(request, trip_id):
     #creating an itinerary form instance with a post request
