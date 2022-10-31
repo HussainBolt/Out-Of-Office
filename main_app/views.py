@@ -16,8 +16,8 @@ def about(request):
   return render(request, 'about.html')
 
 def trips_index(request):
-    trips = Trip.objects.all()
-    return render(request, "trips/index.html", { 'trips': trips })
+  trips = Trip.objects.all()
+  return render(request, "trips/index.html", { 'trips': trips })
 
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
@@ -25,8 +25,8 @@ def trips_detail(request, trip_id):
   return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
 
 class TripCreate(CreateView):
-    model = Trip
-    fields = "__all__" 
+  model = Trip
+  fields = "__all__" 
 
 class TripUpdate(UpdateView):
   model = Trip
@@ -74,26 +74,26 @@ class ActivityDelete(DeleteView):
   success_url = '/activities/'
 
 def add_itinerary(request, trip_id):
-    #creating an itinerary form instance with a post request
-    #passing data from our detail form 
-    form = ItineraryForm(request.POST)
-    if form.is_valid():
-        #form.save will return a new instance of the itinerary
-        #commit=False prevents it from being saved in the database, it remains in memory
-        new_itinerary = form.save(commit=False)
-        new_itinerary.trip_id = trip_id
-        new_itinerary.save()
-    return redirect("detail", trip_id=trip_id)
+  #creating an itinerary form instance with a post request
+  #passing data from our detail form 
+  form = ItineraryForm(request.POST)
+  if form.is_valid():
+      #form.save will return a new instance of the itinerary
+      #commit=False prevents it from being saved in the database, it remains in memory
+      new_itinerary = form.save(commit=False)
+      new_itinerary.trip_id = trip_id
+      new_itinerary.save()
+  return redirect("detail", trip_id=trip_id)
 
 def add_activity(request, itinerary_id):
-    #creating an itinerary form instance with a post request
-    #passing data from our detail form 
-    form = ActivityForm(request.POST)
-    if form.is_valid():
-        new_activity = form.save(commit=False)
-        new_activity.itinerary_id = itinerary_id
-        new_activity.save()
-    return redirect("itineraries_detail", itinerary_id=itinerary_id)
+  #creating an itinerary form instance with a post request
+  #passing data from our detail form 
+  form = ActivityForm(request.POST)
+  if form.is_valid():
+      new_activity = form.save(commit=False)
+      new_activity.itinerary_id = itinerary_id
+      new_activity.save()
+  return redirect("itineraries_detail", itinerary_id=itinerary_id)
 
 def signup(request):
   error_message = ''
