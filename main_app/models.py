@@ -50,7 +50,7 @@ class Activity(models.Model):
 
     #for when we implement our CBV
     def get_absolute_url(self):
-        return reverse("itineraries_detail", kwargs={"itinerary_id": self.id})
+        return reverse("activities_detail", kwargs={"activity_id": self.id})
 
     class Meta:
         ordering = ["-time"]
