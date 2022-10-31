@@ -17,27 +17,28 @@
         <a href="{% url 'trips_delete' trip.id %}" class="delete">Delete</a>
       </div>
     </div>
-    <div class="col s6">
-      <form action="{% url 'add_itinerary' trip.id %}" method="POST">
-        {% csrf_token %}
-        {{ itinerary_form.as_p }}
-        <button class="btn" type="submit">Add Itinerary</button>
-      </form>
-      <br>
-      <table class="striped">
-        <thead>
-          <tr><th>Date</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          {% for itinerary in trip.itinerary_set.all %}
-            <tr>
-              <td><a href="{% url 'itineraries_detail' itinerary.id %}">{{itinerary.date}}</a></td>
-              <td>{{itinerary.notes}}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+  </div>
+  <div class="col s6">
+    <form action="{% url 'add_itinerary' trip.id %}" method="POST">
+      {% csrf_token %}
+      {{ itinerary_form.as_p }}
+      <button class="btn" type="submit">Add Itinerary</button>
+    </form>
+    <br>
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        {% for itinerary in trip.itinerary_set.all %}
+          <tr>
+            <td><a href="{% url 'itineraries_detail' itinerary.id %}">{{itinerary.date}}</a></td>
+            <td>{{itinerary.notes}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <script>
