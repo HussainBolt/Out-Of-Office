@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{itinerary.date}} Details</h1>
+<div class="col s6">
+    <form action="{% url 'add_activity' itinerary.id %}" method="POST">
+      {% csrf_token %}
+      {{ activity_form.as_p }}
+      <button class="btn" type="submit">Add Activity</button>
+    </form>
+    <br>
+    <table class="striped">
+      <thead>
+        <tr><th>Time</th><th>Activity</th></tr>
+      </thead>
+      <tbody>
+        {% for activity in activity.trip_set.all %}
+          <tr>
+            <td><a href="{% url 'activities_detail' activity.id %}">{{time.date}}</a></td>
+            <td>{{activity_name}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

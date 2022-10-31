@@ -31,7 +31,7 @@
         <tbody>
           {% for itinerary in trip.itinerary_set.all %}
             <tr>
-              <td>{{itinerary.date}}</td>
+              <td><a href="{% url 'itineraries_detail' itinerary.id %}">{{itinerary.date}}</a></td>
               <td>{{itinerary.notes}}</td>
             </tr>
           {% endfor %}
@@ -39,5 +39,15 @@
       </table>
     </div>
 </div>
+
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'mm-dd-yyyy',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
 
 {% endblock %}
