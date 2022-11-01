@@ -24,6 +24,13 @@
       </tbody>
     </table>
 </div>
-
+<script>
+  const timeEl = document.getElementById('id_time');
+  M.Timepicker.init(timeEl, {
+    defaultTime: 'now',
+    format: 'HH:MM',
+    twelveHour: false
+  });
+</script>
 
 {% endblock %}

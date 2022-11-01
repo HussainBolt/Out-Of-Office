@@ -22,7 +22,12 @@ urlpatterns = [
     path("itineraries/<int:itinerary_id>/", views.itineraries_detail, name="itineraries_detail"),
     path("itineraries/create/", views.ItineraryCreate.as_view(), name="itineraries_create"),
     path("itineraries/<int:pk>/update/", views.ItineraryUpdate.as_view(), name="itineraries_update"),
-    path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"),
+
+
+    # ###### #####  TESTING  ##### ##### 
+    path("itineraries/<int:itinerary_id>/delete/", views.itineraries_delete, name="itineraries_delete"),
+
+    # path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"), pending deletion
 
     #URL FOR Activity
     #NOTe :comment it out so it does not affect your code

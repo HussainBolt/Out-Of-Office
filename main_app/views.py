@@ -29,6 +29,12 @@ def itineraries_detail(request, itinerary_id):
   activity_form = ActivityForm()
   return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
 
+
+    # ###### #####  TESTING  ##### #####     # ###### #####  TESTING  ##### ##### 
+def itineraries_delete(request, itinerary_id):
+  itinerary = Itinerary.objects.get(id=itinerary_id)
+  return render(request, "itineraries/delete.html", {"itinerary": itinerary})
+
 class TripCreate(CreateView):
   model = Trip
   fields = "__all__" 
@@ -37,6 +43,7 @@ class TripUpdate(UpdateView):
   model = Trip
   #disallow changing location? otherwise delete and start new trip
   fields = ["trip_name", "start_date", "end_date"]
+
 
 class TripDelete(DeleteView):
   model = Trip
@@ -53,9 +60,10 @@ class ItineraryUpdate(UpdateView):
   model = Itinerary
   fields = "__all__"
 
-class ItineraryDelete(DeleteView):
-  model = Itinerary
-  success_url = '/itineraries/'
+# PENDING DELETION
+# class ItineraryDelete(DeleteView):
+#   model = Itinerary
+#   success_url = '/itineraries/'
 
 class ActivityList(ListView):
   model = Activity
@@ -91,7 +99,6 @@ def add_activity(request, itinerary_id):
   #creating an itinerary form instance with a post request
   #passing data from our detail form 
   form = ActivityForm(request.POST)
-  print(f'{itinerary_id}')
   if form.is_valid():
       new_activity = form.save(commit=False)
       new_activity.itinerary_id = itinerary_id

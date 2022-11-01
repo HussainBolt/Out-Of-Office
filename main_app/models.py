@@ -11,7 +11,7 @@ class Trip(models.Model):
     end_date = models.DateField()
 
     def __str__(self):
-        return f"{self.name} ({self.id})"
+        return f"{self.trip_name} ({self.id})"
 
     #for when we implement our CBV
     def get_absolute_url(self):
@@ -38,7 +38,7 @@ class Itinerary(models.Model):
                
 class Activity(models.Model):
     activity_name = models.CharField(max_length=100)
-    time = models.DateTimeField('Time Slot')
+    time = models.TimeField('Time Slot')
     locations = models.TextField(max_length=250)
     # connect to Itinerary model
     itinerary = models.ForeignKey(
