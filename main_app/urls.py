@@ -25,7 +25,7 @@ urlpatterns = [
 
 
     # ###### #####  TESTING  ##### ##### 
-    path("itineraries/<int:pk>/delete/", views.itineraries_delete, name="itineraries_delete"),
+    path("itineraries/<int:itinerary_id>/delete/", views.itineraries_delete, name="itineraries_delete"),
 
     # path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"), pending deletion
 
