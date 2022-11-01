@@ -19,7 +19,7 @@ urlpatterns = [
 
     # Path for itinerary after it has been added to trips
     path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), #Implementation TBD
-    path("itineraries/<int:pk>/", views.ItineraryDetail.as_view(), name="itineraries_detail"), 
+    path("itineraries/<int:itinerary_id>/", views.itineraries_detail, name="itineraries_detail"),
     path("itineraries/create/", views.ItineraryCreate.as_view(), name="itineraries_create"),
     path("itineraries/<int:pk>/update/", views.ItineraryUpdate.as_view(), name="itineraries_update"),
     path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"),
