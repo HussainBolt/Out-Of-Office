@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: rgb(42, 38, 38);
   }
 
 main {
@@ -25,12 +25,14 @@ nav ul a {
 
 .hover:hover {
   background-color: salmon;
-  color: rgb(48, 121, 121);
+  color: aqua;
+  text-shadow: .5px .5px 1px rgb(0, 98, 98);
 }
 
 .left.brand-logo:hover {
   background-color: salmon;
-  color: rgb(48, 121, 121);
+  color: aqua;
+  text-shadow: 1px 1px 2px rgb(0, 98, 98);
 }
 
 .title {
@@ -51,23 +53,29 @@ nav ul a {
 }
 
 .card-content {
-  background-color: rgba(0, 255, 255, 0.196);
-  color: salmon;
+  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.4) , salmon);
+  color: rgb(252, 97, 80);
   text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
-  box-shadow: 7px 7px 7px 5px rgba(250, 128, 114, 0.5);
-  background-image: url("https://i.imgur.com/m8e3h47.png?1");
+  box-shadow: 7px 7px 7px 3px rgba(250, 128, 114, 0.7),
+  7px 7px 7px 8px rgb(78, 231, 255);
 }
 
 .card-content:hover {
-  background-color: rgba(250, 128, 114, 0.344);
+  background-image: linear-gradient(to right, salmon, rgba(0, 255, 255, 0.4));
   color: rgb(94, 255, 255);
   text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
-  box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.5);
+  box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.7),
+  7px 7px 7px 10px rgba(250, 128, 114);
   transition: .3s ease-out;
 }
 
 .card-action {
   background-color: salmon;
+}
+
+.date-color,
+.note-color {
+  color: #fff;
 }
 
 .edit,

@@ -31,8 +31,8 @@
         <tbody>
           {% for itinerary in trip.itinerary_set.all %}
             <tr>
-              <td>{{itinerary.date}}</td>
-              <td>{{itinerary.get_note_display}}</td>
+              <td class="date-color">{{itinerary.date}}</td>
+              <td class="note-color">{{itinerary.get_note_display}}</td>
             </tr>
           {% endfor %}
         </tbody>
