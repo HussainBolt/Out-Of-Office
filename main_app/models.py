@@ -11,7 +11,7 @@ class Trip(models.Model):
     end_date = models.DateField()
 
     def __str__(self):
-        return f"{self.name} ({self.id})"
+        return f"{self.trip_name} ({self.id})"
 
     #for when we implement our CBV
     def get_absolute_url(self):
