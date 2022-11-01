@@ -39,12 +39,12 @@ class Itinerary(models.Model):
 class Activity(models.Model):
     activity_name = models.CharField(max_length=100)
     time = models.DateTimeField('Time Slot')
+    locations = models.TextField(max_length=250)
     # connect to Itinerary model
     itinerary = models.ForeignKey(
         Itinerary,
     on_delete=models.CASCADE
     )
-    locations = models.TextField(max_length=250)
     def __str__(self):
         return f"{self.activity_name}"
 
