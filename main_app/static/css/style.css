@@ -53,19 +53,19 @@ nav ul a {
 }
 
 .card-content {
-  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.4) , salmon);
-  color: rgb(252, 97, 80);
-  text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
+  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.711) , salmon);
+  color: rgb(254, 67, 46);
+  text-shadow: 1px 1px 1.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 3px rgba(250, 128, 114, 0.7),
   7px 7px 7px 8px rgb(78, 231, 255);
 }
 
 .card-content:hover {
-  background-image: linear-gradient(to right, salmon, rgba(0, 255, 255, 0.4));
+  background-image: linear-gradient(to right, salmon, rgba(0, 255, 255, 0.711));
   color: rgb(94, 255, 255);
   text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.7),
-  7px 7px 7px 10px rgba(250, 128, 114);
+  7px 7px 7px 12px rgba(250, 128, 114);
   transition: .3s ease-out;
 }
 
