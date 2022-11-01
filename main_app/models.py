@@ -38,7 +38,7 @@ class Itinerary(models.Model):
                
 class Activity(models.Model):
     activity_name = models.CharField(max_length=100)
-    time = models.DateTimeField('Time Slot')
+    time = models.TimeField('Time Slot')
     locations = models.TextField(max_length=250)
     # connect to Itinerary model
     itinerary = models.ForeignKey(
