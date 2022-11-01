@@ -25,17 +25,11 @@
     </table>
 </div>
 <script>
-  // const dateEl = document.getElementById('id_date');
   const timeEl = document.getElementById('id_time');
-  // M.Datepicker.init(dateEl, {
-  //   format: 'yyyy-mm-dd',
-  //   defaultDate: new Date(),
-  //   setDefaultDate: true,
-  //   autoClose: true
-  // });
   M.Timepicker.init(timeEl, {
     defaultTime: 'now',
-    format: 'hh:mm'
+    format: 'HH:MM',
+    twelveHour: false
   });
 </script>
 

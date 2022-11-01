@@ -91,7 +91,6 @@ def add_activity(request, itinerary_id):
   #creating an itinerary form instance with a post request
   #passing data from our detail form 
   form = ActivityForm(request.POST)
-  print(f'{itinerary_id}')
   if form.is_valid():
       new_activity = form.save(commit=False)
       new_activity.itinerary_id = itinerary_id
