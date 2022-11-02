@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if object %}
+    <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
+  {% else %}
+    <h1 class="title">Add Itinerary</h1>
+  {% endif %}
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn" type="submit">Add Itinerary</button>
+  </form>
+
+  <script>
+    const dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+  </script>
+
+{% endblock %}

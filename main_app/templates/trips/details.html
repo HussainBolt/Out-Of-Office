@@ -36,6 +36,8 @@
             <td>{{itinerary.notes}}</td>
             <td>
               <a href="{% url 'itineraries_update' itinerary.id %}" class="edit">Edit</a>
+            </td>
+            <td>
               <a href="{% url 'itineraries_delete' itinerary.id %}" class="delete">Delete</a>
             </td>
           </tr>
