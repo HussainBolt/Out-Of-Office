@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from requests import request
 from .models import Trip, Itinerary, Activity
 from .forms import ItineraryForm, ActivityForm
 
@@ -30,11 +31,6 @@ def itineraries_detail(request, itinerary_id):
   return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
 
 
-    # ###### #####  TESTING  ##### #####     # ###### #####  TESTING  ##### ##### 
-def itineraries_delete(request, itinerary_id):
-  itinerary = Itinerary.objects.get(id=itinerary_id)
-  return render(request, "itineraries/delete.html", {"itinerary": itinerary})
-
 class TripCreate(CreateView):
   model = Trip
   fields = "__all__" 
@@ -49,8 +45,10 @@ class TripDelete(DeleteView):
   model = Trip
   success_url = "/trips/"
 
-class ItineraryList(ListView):
-  model = Itinerary
+########DELETE PENDNG ########
+# class ItineraryList(ListView):
+#   model = Itinerary
+################################
 
 class ItineraryCreate(CreateView):
   model = Itinerary
@@ -60,13 +58,18 @@ class ItineraryUpdate(UpdateView):
   model = Itinerary
   fields = "__all__"
 
-# PENDING DELETION
-# class ItineraryDelete(DeleteView):
-#   model = Itinerary
-#   success_url = '/itineraries/'
+class ItineraryDelete(DeleteView):
+  model = Itinerary
+  def get_success_url(self):
+    itinerary_pk = self.object.id
+    itinerary = Itinerary.objects.get(id=itinerary_pk)
+    trip_detail_path = itinerary.trip.get_absolute_url()
+    return trip_detail_path 
 
-class ActivityList(ListView):
-  model = Activity
+########DELETE PENDNG ########
+# class ActivityList(ListView):
+#   model = Activity
+################################
 
 class ActivityDetail(DetailView):
   model = Activity
@@ -80,8 +83,13 @@ class ActivityUpdate(UpdateView):
   fields = "__all__"
 
 class ActivityDelete(DeleteView):
-  model = Itinerary
-  success_url = '/activities/'
+  model = Activity
+  
+  def get_success_url(self):
+    activity_pk = self.object.id
+    activity = Activity.objects.get(id=activity_pk)
+    itinerary_detail_path = activity.itinerary.get_absolute_url()
+    return itinerary_detail_path 
 
 def add_itinerary(request, trip_id):
   #creating an itinerary form instance with a post request
