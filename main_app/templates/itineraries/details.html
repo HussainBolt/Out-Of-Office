@@ -22,6 +22,8 @@
             <td>{{activity.locations}}</td>
             <td>
               <a href="{% url 'activities_update' activity.id %}" class="edit">Edit</a>
+            </td>
+            <td>
               <a href="{% url 'activities_delete' activity.id %}" class="delete">Delete</a>
             </td>
           </tr>
