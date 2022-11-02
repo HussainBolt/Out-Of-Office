@@ -180,7 +180,7 @@ nav ul a {
   text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.7),
   7px 7px 7px 15px rgba(250, 128, 114);
-  transition: .3s ease-out;
+  transition-duration: .3s;
 }
 
 .card-action {
@@ -194,8 +194,8 @@ nav ul a {
   text-align: center;
   letter-spacing: .5px;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
+  -webkit-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
   cursor: pointer;
 }
 
