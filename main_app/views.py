@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from requests import request
 from .models import Trip, Itinerary, Activity
 from .forms import ItineraryForm, ActivityForm
 
@@ -30,10 +31,7 @@ def itineraries_detail(request, itinerary_id):
   return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
 
 
-    # ###### #####  TESTING  ##### #####     # ###### #####  TESTING  ##### ##### 
-def itineraries_delete(request, itinerary_id):
-  itinerary = Itinerary.objects.get(id=itinerary_id)
-  return render(request, "itineraries/delete.html", {"itinerary": itinerary})
+
 
 class TripCreate(CreateView):
   model = Trip
@@ -60,10 +58,14 @@ class ItineraryUpdate(UpdateView):
   model = Itinerary
   fields = "__all__"
 
-# PENDING DELETION
-# class ItineraryDelete(DeleteView):
-#   model = Itinerary
-#   success_url = '/itineraries/'
+class ItineraryDelete(DeleteView):
+  model = Itinerary
+  def get_success_url(self):
+    itinerary_pk = self.object.id
+    itinerary = Itinerary.objects.get(id=itinerary_pk)
+    trip_detail_path = itinerary.trip.get_absolute_url()
+    return trip_detail_path 
+
 
 class ActivityList(ListView):
   model = Activity

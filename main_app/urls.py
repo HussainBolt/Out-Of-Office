@@ -11,28 +11,22 @@ urlpatterns = [
     path("trips/<int:pk>/delete/", views.TripDelete.as_view(), name="trips_delete"),
     path('accounts/signup/', views.signup, name='signup'),
 
-    #URL FOR Itinerary
-    #NOTe :comment it out so it does not affect your code
-
     #Path for adding an itinerary to particular trip
     path("trips/<int:trip_id>/add_itinerary/", views.add_itinerary, name="add_itinerary"),
 
     # Path for itinerary after it has been added to trips
-    path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), #Implementation TBD
+    # path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), #DELETE Pending
+
+    #URL FOR Itinerary
     path("itineraries/<int:itinerary_id>/", views.itineraries_detail, name="itineraries_detail"),
     path("itineraries/create/", views.ItineraryCreate.as_view(), name="itineraries_create"),
     path("itineraries/<int:pk>/update/", views.ItineraryUpdate.as_view(), name="itineraries_update"),
+    path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"), 
 
-
-    # ###### #####  TESTING  ##### ##### 
-    path("itineraries/<int:itinerary_id>/delete/", views.itineraries_delete, name="itineraries_delete"),
-
-    # path("itineraries/<int:pk>/delete/", views.ItineraryDelete.as_view(), name="itineraries_delete"), pending deletion
+    #Path for adding an activity to particular itinerary
+    path("itineraries/<int:itinerary_id>/add_activity/", views.add_activity, name="add_activity"),
 
     #URL FOR Activity
-    #NOTe :comment it out so it does not affect your code
-    #Path for adding an itinerary to particular trip
-    path("itineraries/<int:itinerary_id>/add_activity/", views.add_activity, name="add_activity"),
     path("activities/", views.ActivityList.as_view(), name="activities_index"),
     path("activities/<int:pk>/", views.ActivityDetail.as_view(), name="activities_detail"), 
     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
