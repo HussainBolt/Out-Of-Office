@@ -57,6 +57,12 @@ class ItineraryUpdate(UpdateView):
   model = Itinerary
   fields = ["date", "notes"]
 
+  def get_success_url(self):
+    itinerary_pk = self.object.id
+    itinerary = Itinerary.objects.get(id=itinerary_pk)
+    trip_detail_path = itinerary.trip.get_absolute_url()
+    return trip_detail_path 
+
 class ItineraryDelete(DeleteView):
   model = Itinerary
   def get_success_url(self):
