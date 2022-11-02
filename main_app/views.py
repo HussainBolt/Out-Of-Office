@@ -80,6 +80,12 @@ class ActivityCreate(CreateView):
 class ActivityUpdate(UpdateView):
   model = Activity
   fields = "__all__"
+  
+  def get_success_url(self):
+    activity_pk = self.object.id
+    activity = Activity.objects.get(id=activity_pk)
+    itinerary_detail_path = activity.itinerary.get_absolute_url()
+    return itinerary_detail_path 
 
 class ActivityDelete(DeleteView):
   model = Activity
