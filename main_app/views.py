@@ -1,46 +1,50 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Trip, Itinerary, Activity
 from .forms import ItineraryForm, ActivityForm
 
-# Create your views here.
-# Define the home view
+
+## FUNCTION BASED VIEWS ##
 def home(request):
   return render(request, "home.html")
 
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def trips_index(request):
   trips = Trip.objects.all()
   return render(request, "trips/index.html", { 'trips': trips })
 
+@login_required
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
   itinerary_form = ItineraryForm()
   return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
 
+@login_required
 def itineraries_detail(request, itinerary_id):
   itinerary = Itinerary.objects.get(id=itinerary_id)
   activity_form = ActivityForm()
   return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
 
-
-class TripCreate(CreateView):
+## CLASS BASED VIEWS ##
+ # trip views #
+class TripCreate(LoginRequiredMixin, CreateView):
   model = Trip
   fields = "__all__" 
 
-class TripUpdate(UpdateView):
+class TripUpdate(LoginRequiredMixin, UpdateView):
   model = Trip
   #disallow changing location? otherwise delete and start new trip
   fields = ["trip_name", "start_date", "end_date"]
 
-
-class TripDelete(DeleteView):
+class TripDelete(LoginRequiredMixin, DeleteView):
   model = Trip
   success_url = "/trips/"
 
@@ -48,12 +52,12 @@ class TripDelete(DeleteView):
 # class ItineraryList(ListView):
 #   model = Itinerary
 ################################
-
-class ItineraryCreate(CreateView):
+ # itinerary views #
+class ItineraryCreate(LoginRequiredMixin, CreateView):
   model = Itinerary
   fields = "__all__"
 
-class ItineraryUpdate(UpdateView):
+class ItineraryUpdate(LoginRequiredMixin, UpdateView):
   model = Itinerary
   fields = ["date", "notes"]
 
@@ -63,7 +67,7 @@ class ItineraryUpdate(UpdateView):
     trip_detail_path = itinerary.trip.get_absolute_url()
     return trip_detail_path 
 
-class ItineraryDelete(DeleteView):
+class ItineraryDelete(LoginRequiredMixin, DeleteView):
   model = Itinerary
   def get_success_url(self):
     itinerary_pk = self.object.id
@@ -75,15 +79,15 @@ class ItineraryDelete(DeleteView):
 # class ActivityList(ListView):
 #   model = Activity
 ################################
-
-class ActivityDetail(DetailView):
+# activity views #
+class ActivityDetail(LoginRequiredMixin, DetailView):
   model = Activity
 
-class ActivityCreate(CreateView):
+class ActivityCreate(LoginRequiredMixin, CreateView):
   model = Activity
   fields = "__all__"
 
-class ActivityUpdate(UpdateView):
+class ActivityUpdate(LoginRequiredMixin, UpdateView):
   model = Activity
   fields = "__all__"
   
@@ -93,7 +97,7 @@ class ActivityUpdate(UpdateView):
     itinerary_detail_path = activity.itinerary.get_absolute_url()
     return itinerary_detail_path 
 
-class ActivityDelete(DeleteView):
+class ActivityDelete(LoginRequiredMixin, DeleteView):
   model = Activity
   
   def get_success_url(self):
@@ -102,6 +106,8 @@ class ActivityDelete(DeleteView):
     itinerary_detail_path = activity.itinerary.get_absolute_url()
     return itinerary_detail_path 
 
+ # form views #
+@login_required
 def add_itinerary(request, trip_id):
   #creating an itinerary form instance with a post request
   #passing data from our detail form 
@@ -114,6 +120,7 @@ def add_itinerary(request, trip_id):
       new_itinerary.save()
   return redirect("detail", trip_id=trip_id)
 
+@login_required
 def add_activity(request, itinerary_id):
   #creating an itinerary form instance with a post request
   #passing data from our detail form 
