@@ -18,7 +18,7 @@ def about(request):
 
 @login_required
 def trips_index(request):
-  trips = Trip.objects.all()
+  trips = Trip.objects.filter(user=request.user)
   return render(request, "trips/index.html", { 'trips': trips })
 
 @login_required
@@ -37,7 +37,11 @@ def itineraries_detail(request, itinerary_id):
  # trip views #
 class TripCreate(LoginRequiredMixin, CreateView):
   model = Trip
-  fields = "__all__" 
+  fields = "__all__"
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class TripUpdate(LoginRequiredMixin, UpdateView):
   model = Trip
@@ -56,6 +60,10 @@ class TripDelete(LoginRequiredMixin, DeleteView):
 class ItineraryCreate(LoginRequiredMixin, CreateView):
   model = Itinerary
   fields = "__all__"
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class ItineraryUpdate(LoginRequiredMixin, UpdateView):
   model = Itinerary
@@ -86,6 +94,10 @@ class ActivityDetail(LoginRequiredMixin, DetailView):
 class ActivityCreate(LoginRequiredMixin, CreateView):
   model = Activity
   fields = "__all__"
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class ActivityUpdate(LoginRequiredMixin, UpdateView):
   model = Activity
