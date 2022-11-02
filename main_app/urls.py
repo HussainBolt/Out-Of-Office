@@ -14,9 +14,6 @@ urlpatterns = [
     #Path for adding an itinerary to particular trip
     path("trips/<int:trip_id>/add_itinerary/", views.add_itinerary, name="add_itinerary"),
 
-    # Path for itinerary after it has been added to trips
-    # path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), #DELETE Pending
-
     #URL FOR Itinerary
     path("itineraries/<int:itinerary_id>/", views.itineraries_detail, name="itineraries_detail"),
     path("itineraries/create/", views.ItineraryCreate.as_view(), name="itineraries_create"),
@@ -27,9 +24,13 @@ urlpatterns = [
     path("itineraries/<int:itinerary_id>/add_activity/", views.add_activity, name="add_activity"),
 
     #URL FOR Activity
-    path("activities/", views.ActivityList.as_view(), name="activities_index"),
     path("activities/<int:pk>/", views.ActivityDetail.as_view(), name="activities_detail"), 
     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
     path("activities/<int:pk>/update/", views.ActivityUpdate.as_view(), name="activities_update"),
     path("activities/<int:pk>/delete/", views.ActivityDelete.as_view(), name="activities_delete"),
+
+    ########DELETE PENDNG ########
+    # path("itineraries/", views.ItineraryList.as_view(), name="itineraries_index"), 
+    # path("activities/", views.ActivityList.as_view(), name="activities_index"), 
+    ################################
 ]
