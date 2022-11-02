@@ -4,7 +4,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from requests import request
 from .models import Trip, Itinerary, Activity
 from .forms import ItineraryForm, ActivityForm
 
@@ -56,7 +55,7 @@ class ItineraryCreate(CreateView):
 
 class ItineraryUpdate(UpdateView):
   model = Itinerary
-  fields = "__all__"
+  fields = ["date", "notes"]
 
 class ItineraryDelete(DeleteView):
   model = Itinerary
