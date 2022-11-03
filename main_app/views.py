@@ -85,6 +85,8 @@ class ItineraryDelete(LoginRequiredMixin, DeleteView):
     trip_detail_path = itinerary.trip.get_absolute_url()
     return trip_detail_path 
 
+class ActivityDetail(DetailView):
+  model = Activity
 
 class ActivityCreate(LoginRequiredMixin, CreateView):
   model = Activity
