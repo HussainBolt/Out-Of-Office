@@ -29,7 +29,7 @@ def trips_detail(request, trip_id):
     itinerary_form = ItineraryForm()
     return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
   else:
-    raise PermissionDenied 
+    raise PermissionDenied
 
 @login_required
 def itineraries_detail(request, itinerary_id):
@@ -44,7 +44,7 @@ def itineraries_detail(request, itinerary_id):
  # trip views #
 class TripCreate(LoginRequiredMixin, CreateView):
   model = Trip
-  fields = "__all__"
+  fields = ["trip_name", "locations", "start_date", "end_date"]
   def form_valid(self, form):
     # Assign the logged in user (self.request.user)
     form.instance.user = self.request.user
@@ -52,8 +52,7 @@ class TripCreate(LoginRequiredMixin, CreateView):
 
 class TripUpdate(LoginRequiredMixin, UpdateView):
   model = Trip
-  #disallow changing location? otherwise delete and start new trip
-  fields = ["trip_name", "start_date", "end_date"]
+  fields = ["trip_name", "locations", "start_date", "end_date"]
 
 class TripDelete(LoginRequiredMixin, DeleteView):
   model = Trip
