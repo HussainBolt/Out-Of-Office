@@ -24,6 +24,7 @@ urlpatterns = [
     path("itineraries/<int:itinerary_id>/add_activity/", views.add_activity, name="add_activity"),
 
     #URL FOR Activity
+    path("activities/<int:pk>/", views.ActivityDetail.as_view(), name='activities_detail'),
     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
     path("activities/<int:pk>/update/", views.ActivityUpdate.as_view(), name="activities_update"),
     path("activities/<int:pk>/delete/", views.ActivityDelete.as_view(), name="activities_delete"),
