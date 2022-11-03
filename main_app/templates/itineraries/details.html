@@ -17,7 +17,7 @@
       <tbody>
         {% for activity in itinerary.activity_set.all %}
           <tr>
-            <td><a href="{% url 'activities_detail' activity.id %}">{{activity.time}}</a></td>
+            <td>{{activity.time}}</td>
             <td>{{activity.activity_name}}</td>
             <td>{{activity.locations}}</td>
             <td>
