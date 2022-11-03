@@ -55,3 +55,10 @@ class Activity(models.Model):
 
     class Meta:
         ordering = ["-time"]
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Activity ID {self.activity_id} @{self.url}"
