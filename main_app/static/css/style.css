@@ -94,9 +94,6 @@ span {
   text-decoration: none;
   transition-duration: .25s;
 }
-/* .menu__item:hover {
-  background-color: #CFD8DC;
-} */
 
 /* ^--Menu--^ */
 
@@ -116,6 +113,18 @@ nav ul a {
   display: block;
   padding: 0 15px;
   cursor: pointer;
+}
+
+img {
+  height: 25%;
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0px 0px 3px 2px aqua,
+  0px 0px 6px 4px salmon;
 }
 
 .hover {
@@ -224,8 +233,9 @@ nav ul a {
   color: #fff !important;
 }
 
-.striped a {
-  color: rgb(0, 255, 255) !important;
+.about {
+  font-size: 20px;
+  text-shadow: 1.5px 1.5px 2px rgb(0, 0, 0);
 }
 
 #id_start_date,
@@ -236,6 +246,7 @@ nav ul a {
 #id_username,
 #id_password1,
 #id_time,
+#id_activity_name,
 .striped th,
 table.striped th {
   color: #fff !important;
