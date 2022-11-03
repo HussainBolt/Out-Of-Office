@@ -159,7 +159,13 @@ nav ul a {
               2px 2px 0px rgb(61, 133, 133), 
               3px 3px 0px rgb(64, 195, 195), 
               5px 5px 0px black,
-              6px 6px 0px salmon;
+              6px 6px 0px salmon,
+              5px 5px 1px salmon,
+              4px 4px 3px salmon,
+              3px 3px 6px salmon,
+              6px 6px 6px salmon,
+              -1px -1px 3px salmon,
+              -2px -2px 4px salmon;
 }
 
 .card {
