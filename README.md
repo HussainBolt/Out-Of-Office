@@ -1,7 +1,7 @@
 # 📑Out of Office
 
 ## 🔉About
-Out of Office is a website created by the Office Cats.
+We are the Office Cats! Our team wanted to introduce an exciting service to help you plan your upcoming trips, so we created Out of Office! Use Out of Office to log your future trips along with a detailed itinerary and activities log so there are no gaps in your plans and can stay on schedule!
 
 ## 😼The Office Cats
 - Serra Chen
