@@ -127,18 +127,25 @@ nav ul a {
   padding: 12px 24px;
   border-radius: 8px;
   color: aqua;
-  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0),
+  2px 2px 3px rgb(0, 0, 0);
 }
 
 .left.brand-logo:hover,
 .hover:hover {
   background-color: rgb(0, 234, 234);
   color: rgb(254, 100, 83);
-  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0),
+  2px 2px 3px rgb(0, 0, 0);
 }
 
-.container h1 {
+.container h1, 
+.container h4 {
   color: #fff !important;
+}
+
+.datepicker-table-wrapper {
+  color: #26a69a;
 }
 
 .title {
@@ -152,7 +159,13 @@ nav ul a {
               2px 2px 0px rgb(61, 133, 133), 
               3px 3px 0px rgb(64, 195, 195), 
               5px 5px 0px black,
-              6px 6px 0px salmon;
+              6px 6px 0px salmon,
+              5px 5px 1px salmon,
+              4px 4px 3px salmon,
+              3px 3px 6px salmon,
+              6px 6px 6px salmon,
+              -1px -1px 3px salmon,
+              -2px -2px 4px salmon;
 }
 
 .card {
@@ -173,7 +186,7 @@ nav ul a {
   text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
   box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.7),
   7px 7px 7px 15px rgba(250, 128, 114);
-  transition: .3s ease-out;
+  transition-duration: .3s;
 }
 
 .card-action {
@@ -187,8 +200,8 @@ nav ul a {
   text-align: center;
   letter-spacing: .5px;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
+  -webkit-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
   cursor: pointer;
 }
 
@@ -221,8 +234,10 @@ nav ul a {
 #id_date,
 #id_notes,
 #id_username,
-#id_password1
-.striped th {
+#id_password1,
+#id_time,
+.striped th,
+table.striped th {
   color: #fff !important;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
