@@ -28,5 +28,6 @@ urlpatterns = [
     path("activities/create/", views.ActivityCreate.as_view(), name="activities_create"),
     path("activities/<int:pk>/update/", views.ActivityUpdate.as_view(), name="activities_update"),
     path("activities/<int:pk>/delete/", views.ActivityDelete.as_view(), name="activities_delete"),
+    path('activities/<int:activity_id>/add_photo/', views.add_photo, name='add_photo'),
 
 ]
