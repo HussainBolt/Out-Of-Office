@@ -3,7 +3,7 @@
 ## 🔉About
 Out of Office is a website created by the Office Cats.
 
-## 😼Office Cat Team
+## 😼The Office Cats
 - Serra Chen
 - Shawn Hussain
 - Michael Alberto
