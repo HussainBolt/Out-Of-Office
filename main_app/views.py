@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -23,15 +24,21 @@ def trips_index(request):
 
 @login_required
 def trips_detail(request, trip_id):
-  trip = Trip.objects.get(id=trip_id)
-  itinerary_form = ItineraryForm()
-  return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
+  if request.user == Trip.objects.get(id=trip_id).user:
+    trip = Trip.objects.get(id=trip_id)
+    itinerary_form = ItineraryForm()
+    return render(request, "trips/details.html", {"trip": trip, 'itinerary_form': itinerary_form})
+  else:
+    raise PermissionDenied 
 
 @login_required
 def itineraries_detail(request, itinerary_id):
-  itinerary = Itinerary.objects.get(id=itinerary_id)
-  activity_form = ActivityForm()
-  return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
+  if request.user == Itinerary.objects.get(id=itinerary_id).trip.user:
+    itinerary = Itinerary.objects.get(id=itinerary_id)
+    activity_form = ActivityForm()
+    return render(request, "itineraries/details.html", {"itinerary": itinerary, 'activity_form': activity_form})
+  else:
+    raise PermissionDenied
 
 ## CLASS BASED VIEWS ##
  # trip views #
