@@ -52,10 +52,6 @@ class TripDelete(LoginRequiredMixin, DeleteView):
   model = Trip
   success_url = "/trips/"
 
-########DELETE PENDNG ########
-# class ItineraryList(ListView):
-#   model = Itinerary
-################################
  # itinerary views #
 class ItineraryCreate(LoginRequiredMixin, CreateView):
   model = Itinerary
@@ -83,13 +79,6 @@ class ItineraryDelete(LoginRequiredMixin, DeleteView):
     trip_detail_path = itinerary.trip.get_absolute_url()
     return trip_detail_path 
 
-########DELETE PENDNG ########
-# class ActivityList(ListView):
-#   model = Activity
-################################
-# activity views #
-class ActivityDetail(LoginRequiredMixin, DetailView):
-  model = Activity
 
 class ActivityCreate(LoginRequiredMixin, CreateView):
   model = Activity
