@@ -51,6 +51,8 @@ We are the Office Cats! Our team wanted to introduce an exciting service to help
 
 Link to Website: [Out of Office](https://out-of-office.herokuapp.com/)
 
+Link to Trello Board: [Here](https://trello.com/b/OokOUXDU/ga-project-03)
+
 ## 📈Next Steps/Future Features
 - Incorporate budget tracking for planning out an entire trip
 - Allow the user to be able to search for locations via the site and add the location to trip plans
