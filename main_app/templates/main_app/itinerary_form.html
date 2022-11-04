@@ -10,8 +10,8 @@
   <form action="" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn" type="submit">Add Itinerary</button>
-    <a href="{% url 'detail' itinerary.trip.id %}"><button class="btn" type="submit">Cancel</button></a>
+    <button class="btn" type="submit">Edit Itinerary</button>
+    <a href="{% url 'detail' itinerary.trip.id %}"><button class="btn" type="button">Cancel</button></a>
   </form>
 
   <script>

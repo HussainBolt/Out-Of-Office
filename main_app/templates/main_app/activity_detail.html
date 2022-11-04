@@ -2,7 +2,7 @@
 
 {% block content %}
 <br><br>
-<a href="{% url 'itineraries_detail' object.itinerary.id %}"><input type="submit" class="btn" value="← Return to {{ object.itinerary.date }} Itinerary"></a>
+<a href="{% url 'itineraries_detail' object.itinerary.id %}"><input type="button" class="btn" value="← Return to {{ object.itinerary.date }} Itinerary"></a>
 <br><br>
 <!-- ADD PHOTO FORM -->
 <form action="{% url 'add_photo' activity.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
