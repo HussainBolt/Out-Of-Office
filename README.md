@@ -25,13 +25,17 @@ We are the Office Cats! Our team wanted to introduce an exciting service to help
 ![add-trip-page](github website)
 
 ### View All Trips
-![view-trip-page](github website)
+![view-all-trip-page](github website)
 
 ### Trip Detail Page / Itinerary Index
 ![trip-detail-page](github website)
 
-### Itinerary Detail Page / Activiy Index for Itine
+### Itinerary Detail Page / Activiy Index for Itinerary
 ![itinerary-detail-page](github website)
+
+### Activity Detail Page 
+![activity-detail-page](github website)
+
 
 ## 💻TECHNOLOGIES USED:
 - HTML
