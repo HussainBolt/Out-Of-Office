@@ -154,7 +154,13 @@ img {
 }
 
 .datepicker-table-wrapper {
-  color: #26a69a;
+  color: rgb(250, 99, 82);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+div.timepicker-tick {
+  color: rgb(250, 99, 82);
+  text-shadow: .5px .5px 1px rgb(0, 0, 0);
 }
 
 .title {
