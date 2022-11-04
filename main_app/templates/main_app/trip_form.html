@@ -14,7 +14,13 @@
       <!-- Render the inputs inside of <tr>s & <td>s -->
       {{ form.as_table }}
     </table>
+    {% if object %}
+    <input type="submit" value="Edit Trip" class="btn">
+    <a href="{% url 'detail' trip.id %}"><button class="btn" type="button">Cancel</button></a>
+  {% else %}
     <input type="submit" value="Add Trip" class="btn">
+    <a href="/trips/"><button class="btn" type="button">Cancel</button></a>
+  {% endif %}
   </form>
 
   <script>
