@@ -10,42 +10,41 @@ We are the Office Cats! Our team wanted to introduce an exciting service to help
 
 ## 📸Screenshots
 ### Home Page
-![home-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/home-page.png)
+![home-page](/public/images/webpage-screenshot/home-page.png)
 
 ### About Page
-![about-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/about-page.png)
+![about-page](/public/images/webpage-screenshot/about-page.png)
 
 ### Sign Up Page
-![sign-up-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/sign-up-page.png)
+![sign-up-page](/public/images/webpage-screenshot/sign-up-page.png)
 
 ### Log In Page
-![log-in-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/log-in-page.png)
+![log-in-page](/public/images/webpage-screenshot/log-in-page.png)
 
 ### Add Trip Page
-![add-trip-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/add-trip-page.png)
+![add-trip-page](/public/images/webpage-screenshot/add-trip-page.png)
 
 ### View All Trips
-![view-all-trip-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/view-all-trip-page.png)
+![view-all-trip-page](/public/images/webpage-screenshot/view-all-trip-page.png)
 
 ### Trip Detail Page / Itinerary Index
-![trip-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/trip-detail-page.png)
+![trip-detail-page](/public/images/webpage-screenshot/trip-detail-page.png)
 
 ### Itinerary Detail Page / Activiy Index for Itinerary
-![itinerary-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/itinerary-detail-page.png)
+![itinerary-detail-page](/public/images/webpage-screenshot/itinerary-detail-page.png)
 
 ### Activity Detail Page 
-![activity-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/activity-detail-page.png)
+![activity-detail-page](/public/images/webpage-screenshot/activity-detail-page.png)
 
 
 ## 💻TECHNOLOGIES USED:
-- HTML
-- CSS
-- JavaScript
-- Python
+- HTML: page content
+- CSS: styling
+- Python:
 - Django
-- PSQL
-- AWS 
-- Heroku
+- PSQL: database
+- AWS: image hosting
+- Heroku: deployment site
 
 ## 🚀Getting Started:
 
