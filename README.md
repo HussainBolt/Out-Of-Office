@@ -56,5 +56,6 @@ Link to Trello Board: [Here](https://trello.com/b/OokOUXDU/ga-project-03)
 ## 📈Next Steps/Future Features
 - Incorporate budget tracking for planning out an entire trip
 - Allow the user to be able to search for locations via the site and add the location to trip plans
-- Allow the users to have a checklist for there trip
+- Allow the users to have a checklist for their trip
+- Adds a map showing all locations added to trip
 
