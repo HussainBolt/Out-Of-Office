@@ -10,31 +10,31 @@ We are the Office Cats! Our team wanted to introduce an exciting service to help
 
 ## 📸Screenshots
 ### Home Page
-![home-page](github website)
+![home-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/home-page.png)
 
 ### About Page
-![about-page](github website)
+![about-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/about-page.png)
 
 ### Sign Up Page
-![sign-up-page](github website)
+![sign-up-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/sign-up-page.png)
 
 ### Log In Page
-![log-in-page](github website)]
+![log-in-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/log-in-page.png)
 
 ### Add Trip Page
-![add-trip-page](github website)
+![add-trip-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/add-trip-page.png)
 
 ### View All Trips
-![view-all-trip-page](github website)
+![view-all-trip-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/view-all-trip-page.png)
 
 ### Trip Detail Page / Itinerary Index
-![trip-detail-page](github website)
+![trip-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/trip-detail-page.png)
 
 ### Itinerary Detail Page / Activiy Index for Itinerary
-![itinerary-detail-page](github website)
+![itinerary-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/itinerary-detail-page.png)
 
 ### Activity Detail Page 
-![activity-detail-page](github website)
+![activity-detail-page](https://github.com/schen044/Out-Of-Office/blob/main/public/images/webpage-screenshot/activity-detail-page.png)
 
 
 ## 💻TECHNOLOGIES USED:
