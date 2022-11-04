@@ -14,7 +14,8 @@
       <!-- Render the inputs inside of <tr>s & <td>s -->
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Add Actitivity" class="btn">
+    <input type="submit" value="Add Activity" class="btn">
+    <a href="{% url 'itineraries_detail' activity.itinerary.id %}"><button class="btn" type="submit">Cancel</button></a>
   </form>
 
   <script>
