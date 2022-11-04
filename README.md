@@ -38,13 +38,14 @@ We are the Office Cats! Our team wanted to introduce an exciting service to help
 
 
 ## 💻TECHNOLOGIES USED:
-- HTML: page content
-- CSS: styling
-- Python:
+- HTML
+- CSS
+- Javascript
+- Python
 - Django
-- PSQL: database
-- AWS: image hosting
-- Heroku: deployment site
+- PSQL
+- AWS
+- Heroku
 
 ## 🚀Getting Started:
 
