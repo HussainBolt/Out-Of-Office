@@ -10,26 +10,31 @@ body {
 #menu__toggle {
   opacity: 0;
 }
+
 #menu__toggle:checked + .menu__btn > span {
   transform: rotate(45deg);
   background-color: salmon;
 }
+
 #menu__toggle:checked + .menu__btn > span::before {
   top: 0;
   transform: rotate(0deg);
   background-color: aqua;
   box-shadow: 0px 3px 4px rgb(0, 0, 0)
 }
+
 #menu__toggle:checked + .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
   background-color: aqua;
   box-shadow: 3px 0px 4px rgb(0, 0, 0)
 }
+
 #menu__toggle:checked ~ .menu__box {
   right: 0 !important;
   background-color: rgb(228, 115, 103);
 }
+
 .menu__btn {
   background-color: rgb(228, 115, 103);
   position: fixed;
@@ -62,14 +67,17 @@ span {
   box-shadow: .1px .1px .1px .5px rgb(0, 0, 0, 1);
   transition-duration: .3s;
 }
+
 .menu__btn > span::before {
   content: '';
   top: -8px;
 }
+
 .menu__btn > span::after {
   content: '';
   top: 8px;
 }
+
 .menu__box {
   display: block;
   position: fixed;
@@ -84,6 +92,7 @@ span {
   box-shadow: -15px 1px 10px rgba(0, 0, 0, .4);
   transition-duration: .3s;
 }
+
 .menu__item {
   display: block;
   padding: 12px 24px;
@@ -98,8 +107,8 @@ span {
 /* ^--Menu--^ */
 
 main {
-    flex: 1 0 auto;
-  }
+  flex: 1 0 auto;
+}
 
 .nav-wrapper {
   background-color: rgb(88, 206, 206);
@@ -292,7 +301,7 @@ a.delete:hover {
 }
 
 footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-    box-shadow: 3px -5px 10px aqua;
-  }
+  padding-top: 0;
+  text-align: right;
+  box-shadow: 3px -5px 10px aqua;
+}
