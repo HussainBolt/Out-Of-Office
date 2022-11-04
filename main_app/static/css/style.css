@@ -5,6 +5,13 @@ body {
   background-color: rgb(42, 38, 38);
 }
 
+#welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
 /* v--Menu--v */
 
 #menu__toggle {

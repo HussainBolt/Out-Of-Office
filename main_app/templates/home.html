@@ -2,5 +2,11 @@
 {% block content %}
 
 <h1 class="title">Welcome!</h1>
+<div id="welcome">
+    <a href="{% url 'login' %}" class="btn">Log In</a></li>
+    or
+    <a href="{% url 'signup' %}" class="btn">Sign Up</a></li>
+</div>
+
 
 {% endblock %}

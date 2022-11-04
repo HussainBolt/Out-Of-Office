@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # Add this variable to specify where successful logins should redirect to
-LOGIN_REDIRECT_URL = '/about/'
+LOGIN_REDIRECT_URL = '/trips/'
 # Add this variable to specify where logging out redirects to
 LOGOUT_REDIRECT_URL = '/'
 
