@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if object %}
+  <h1>Edit <span class="teal-text">{{ object.date }}</span> Itinerary</h1>
+{% else %}
+  <h1 class="title">Add Itinerary</h1>
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn" type="submit">Edit Itinerary</button>
+  <a href="{% url 'detail' itinerary.trip.id %}"><button class="btn" type="button">Cancel</button></a>
+</form>
+
+<!-- MATERIALIZE DATE PICKER FOR DATE INPUT -->
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
+
+{% endblock %}

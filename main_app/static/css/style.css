@@ -1,0 +1,314 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: rgb(42, 38, 38);
+}
+
+#welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+/* v--Menu--v */
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+  background-color: salmon;
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+  background-color: aqua;
+  box-shadow: 0px 3px 4px rgb(0, 0, 0)
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background-color: aqua;
+  box-shadow: 3px 0px 4px rgb(0, 0, 0)
+}
+
+#menu__toggle:checked ~ .menu__box {
+  right: 0 !important;
+  background-color: rgb(228, 115, 103);
+}
+
+.menu__btn {
+  background-color: rgb(228, 115, 103);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  margin: 2px;
+  border-radius: 2px;
+}
+
+span {
+  top: 12px;
+}
+
+.menu__btn:hover {
+  transform: scale(0.9);
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+  box-shadow: .1px .1px .1px .5px rgb(0, 0, 0, 1);
+  transition-duration: .3s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: salmon;
+  box-shadow: -15px 1px 10px rgba(0, 0, 0, .4);
+  transition-duration: .3s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+/* ^--Menu--^ */
+
+main {
+  flex: 1 0 auto;
+}
+
+.nav-wrapper {
+  background-color: rgb(88, 206, 206);
+  box-shadow: 0px 5px 5px 5px salmon;
+}
+
+nav ul a {
+  transition: background-color .3s;
+  font-size: 1rem;
+  color: #fff;
+  display: block;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+img {
+  height: 25%;
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0px 0px 3px 2px aqua,
+  0px 0px 6px 4px salmon;
+}
+
+.hover {
+  font-size: 20px;
+}
+
+.left.brand-logo, 
+.hover{
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: aqua;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0),
+  2px 2px 3px rgb(0, 0, 0);
+}
+
+.left.brand-logo:hover,
+.hover:hover {
+  background-color: rgb(0, 234, 234);
+  color: rgb(254, 100, 83);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0),
+  2px 2px 3px rgb(0, 0, 0);
+}
+
+.container h1, 
+.container h4 {
+  color: #fff !important;
+}
+
+.datepicker-table-wrapper {
+  color: rgb(250, 99, 82);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+div.timepicker-tick {
+  color: rgb(250, 99, 82);
+  text-shadow: .5px .5px 1px rgb(0, 0, 0);
+}
+
+.title {
+  display: grid;
+  text-align: center;
+  font-size: 60px;
+  color: rgb(88, 206, 206);
+  font-family: 'Niconne', cursive;
+  font-weight: 10000;
+  text-shadow:1px 1px 0px rgb(61, 133, 133),
+              2px 2px 0px rgb(61, 133, 133), 
+              3px 3px 0px rgb(64, 195, 195), 
+              5px 5px 0px black,
+              6px 6px 0px salmon,
+              5px 5px 1px salmon,
+              4px 4px 3px salmon,
+              3px 3px 6px salmon,
+              6px 6px 6px salmon,
+              -1px -1px 3px salmon,
+              -2px -2px 4px salmon;
+}
+
+.card {
+  margin: 30px;
+}
+
+.card-content {
+  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.711) , salmon);
+  color: rgb(254, 67, 46);
+  text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
+  box-shadow: 7px 7px 7px 3px rgba(250, 128, 114, 0.7),
+  7px 7px 7px 8px rgb(78, 231, 255);
+}
+
+.card-content:hover {
+  background-image: linear-gradient(to right, salmon, rgba(0, 255, 255, 0.711));
+  color: rgb(94, 255, 255);
+  text-shadow: 1.5px 1.5px 2.5px rgb(0, 0, 0);
+  box-shadow: 7px 7px 7px 5px rgb(88, 206, 206, 0.7),
+  7px 7px 7px 15px rgba(250, 128, 114);
+  transition-duration: .3s;
+}
+
+.card-action {
+  background-color: salmon;
+}
+
+.btn, .btn-large, .btn-small {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(2, 211, 211);
+  text-align: center;
+  letter-spacing: .5px;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  -webkit-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
+  cursor: pointer;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: salmon;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  transform: scale(.95)
+}
+
+.striped a {
+  color: rgb(0, 255, 255) !important;
+}
+
+.striped a:hover {
+  color: rgb(0, 255, 255) !important;
+  text-shadow: 1.5px 1.5px 3px rgb(0, 0, 0);
+}
+
+.container p {
+  color: #fff !important;
+}
+
+.about {
+  font-size: 20px;
+  text-shadow: 1.5px 1.5px 2px rgb(0, 0, 0);
+}
+
+#id_start_date,
+#id_end_date,
+#id_locations, 
+#id_date,
+#id_notes,
+#id_username,
+#id_password1,
+#id_time,
+#id_activity_name,
+.striped th,
+table.striped th {
+  color: #fff !important;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+ul:not(.browser-default)>li {
+  color: #fff !important;
+  list-style-type: none;
+}
+
+#id_trip_name {
+  color: #fff !important;
+}
+
+table.striped>tbody>tr>td {
+  color: rgb(255, 90, 71) !important;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+div.card-action {
+  background-color: salmon !important;
+  box-shadow: 7px 7px 7px 3px rgba(250, 128, 114, 0.7),
+  7px 7px 7px 8px rgb(78, 231, 255);
+}
+
+a.edit,
+a.delete {
+  color: white !important;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+a.edit:hover,
+a.delete:hover {
+  color: rgb(0, 255, 255) !important;
+  text-shadow: 1.5px 1.5px 3px rgb(0, 0, 0);
+}
+
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+  box-shadow: 3px -5px 10px aqua;
+}

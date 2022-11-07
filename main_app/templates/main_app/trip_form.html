@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if object %}
+  <h1>Edit <span class="teal-text">{{ object.trip_name }}</span></h1>
+{% else %}
+  <h1 class="title">Add Trip</h1>
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  {% if object %}
+    <input type="submit" value="Edit Trip" class="btn">
+    <a href="{% url 'detail' trip.id %}"><button class="btn" type="button">Cancel</button></a>
+  {% else %}
+    <input type="submit" value="Add Trip" class="btn">
+    <a href="/trips/"><button class="btn" type="button">Cancel</button></a>
+  {% endif %}
+</form>
+
+  <!-- MATERIALIZE DATE PICKER FOR DATE INPUT -->
+<script>
+  const startDateEl = document.getElementById('id_start_date');
+  const endDateEl = document.getElementById('id_end_date');
+  M.Datepicker.init(startDateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+  M.Datepicker.init(endDateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
+
+{% endblock %}

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +121,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Add this variable to specify where successful logins should redirect to
+LOGIN_REDIRECT_URL = '/trips/'
+# Add this variable to specify where logging out redirects to
+LOGOUT_REDIRECT_URL = '/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
